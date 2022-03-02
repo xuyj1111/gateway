@@ -4,7 +4,7 @@ spring:
   main:
     allow-bean-definition-overriding: true #当多个bean遇到同样名字的时候，是否允许覆盖注册
 server:
-  port: 8101
+  port: 8102
   tomcat:
     uri-encoding: UTF-8
     max-connections: 2000
