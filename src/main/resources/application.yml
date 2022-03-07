@@ -14,3 +14,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8100/eureka/ #注册中心地址
+zuul:
+#  ignoredPatterns: '*'
+  routes:
+    all-service:
+      path: /api/all/**
+      serviceId: all-service
