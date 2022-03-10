@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: gateway-server
   main:
     allow-bean-definition-overriding: true #当多个bean遇到同样名字的时候，是否允许覆盖注册
 server:
@@ -10,14 +8,10 @@ server:
     max-connections: 2000
     max-threads: 1000
     min-spare-threads: 64
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8100/eureka/ #注册中心地址
 zuul:
   sensitiveHeaders:
   routes:
     all-service:
       path: /api/all/**
-      serviceId: all-service
+      serviceId: all
       stripPrefix: false
