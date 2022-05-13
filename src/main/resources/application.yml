@@ -1,6 +1,20 @@
 spring:
   main:
     allow-bean-definition-overriding: true #当多个bean遇到同样名字的时候，是否允许覆盖注册
+  dataSource:
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/xu?useUnicode=yes&characterEncoding=UTF-8&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  security:
+    user:
+      name: root
+      password: root
+#      roles: admin, user
 server:
   port: 8102
   tomcat:
