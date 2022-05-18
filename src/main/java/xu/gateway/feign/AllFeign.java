@@ -2,12 +2,10 @@ package xu.gateway.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient(value = "all")
-@RequestMapping("/api/all")
+@FeignClient(value = "all", fallback = AllFeignFallback.class)
 public interface AllFeign {
 
-    @PostMapping("/hello_world")
+    @PostMapping("/api/all/hello")
     String helloWorld();
 }

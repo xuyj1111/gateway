@@ -10,10 +10,12 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-  security:
-    user:
-      name: root
-      password: root
+
+#  内存设置用户名、密码、角色
+#  security:
+#    user:
+#      name: root
+#      password: root
 #      roles: admin, user
 server:
   port: 8102
@@ -29,3 +31,13 @@ zuul:
       path: /api/all/**
       serviceId: all
       stripPrefix: false
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+feign:
+  hystrix:
+    enabled: true

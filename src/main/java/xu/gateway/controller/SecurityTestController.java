@@ -6,8 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/** 
+ * @Description: 搭配 SecurityTestConfig 配置类，返回thymeleaf视图
+ * @Author: xuyujun
+ * @Date: 2022/5/17 
+ */ 
 @Controller
-public class SecurityController {
+public class SecurityTestController {
 
     @RequestMapping(value = {"/home", "/"})
     public String home() {
