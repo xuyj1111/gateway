@@ -22,9 +22,8 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web"
     implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
     implementation "org.springframework.boot:spring-boot-starter-security"
-    implementation "org.springframework.boot:spring-security-oauth3-autoconfigure"
     implementation "org.springframework.boot:spring-boot-starter-data-jpa"
-    implementation "org.springframework.cloud:spring-cloud-dependencies:2.1.0.RELEASE"
+    implementation "org.springframework.cloud:spring-cloud-dependencies:Greenwich.RELEASE"
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.1.0.RELEASE"
     implementation "org.springframework.cloud:spring-cloud-starter-config:2.1.0.RELEASE"
     implementation "org.springframework.cloud:spring-cloud-starter-openfeign:2.1.0.RELEASE"
@@ -32,11 +31,22 @@ dependencies {
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-hystrix:2.1.0.RELEASE"
     implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-    implementation 'org.projectlombok:lombok'
+    // mysql
     implementation 'mysql:mysql-connector-java:5.1.47'
     implementation 'com.alibaba:druid-spring-boot-starter:1.1.22'
-    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+    implementation 'org.projectlombok:lombok'
+    // 工具
+    implementation 'org.projectlombok:lombok'
+    implementation 'cn.hutool:hutool-all:5.8.1'
+    implementation group: 'joda-time', name: 'joda-time', version: '2.10.1'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.8'
+    implementation 'org.yaml:snakeyaml:1.29'
+    implementation('xu.tools:tools-io:0.0.1-SNAPSHOT') { changing = true }
+    implementation('xu.tools:tools-json:0.0.1-SNAPSHOT') { changing = true }
+//    ???
+//    implementation "org.springframework.boot:spring-security-oauth3-autoconfigure"
+//    implementation 'io.jsonwebtoken:jjwt:0.9.1'
 }
 
 test {

@@ -31,6 +31,8 @@ zuul:
       path: /api/all/**
       serviceId: all
       stripPrefix: false
+
+#官网配置：https://github.com/Netflix/Hystrix/wiki/Configuration
 hystrix:
   command:
     default:
@@ -38,6 +40,15 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 1000
+      circuitBreaker:
+#        开启熔断器功能
+        enabled: true
+#        请求次数的峰值
+        requestVolumeThreshold: 10
+#        单位时间，即在此单位时间内的请求次数大于峰值，开启熔断器
+        sleepWindowInMilliseconds: 1000
+#        失败率
+        errorThresholdPercentage: 60
 feign:
   hystrix:
     enabled: true
